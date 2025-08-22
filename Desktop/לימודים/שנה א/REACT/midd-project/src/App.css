@@ -1,0 +1,1045 @@
+
+*{
+direction: rtl;
+    text-align: center;
+    box-sizing: border-box; 
+    font-family: 'Heebo', sans-serif; 
+}
+
+body {
+    background-color: #f0f2f5; 
+    margin: 0;
+    padding: 20px; 
+}
+
+i{
+    margin-left: 10px;
+}
+
+/* עיצוב לסרגל הניווט */
+.navv {
+  display: flex;
+  justify-content: center;
+  background-color: #eadacc;
+  padding: 18px 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+}
+
+.navv-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px; /* רווח מינימלי בין הקישורים */
+}
+
+.navv a {
+  color: #7b644f;
+  text-decoration: none;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.navv a:hover {
+  color: #5a4331;
+  background-color: #d4c1af;
+  cursor: pointer;
+}
+
+.navv a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #5a4331;
+}
+
+.navv a {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navv a:hover {
+  transform: scale(1.15);
+}
+
+.aboutDiv{ /*  מלל בדף האודות  */
+  font-size: larger;
+  color: #2d1d0c;
+  font-family: 'Assistant', sans-serif;
+  /* opacity: 100%;/ */
+}
+
+h2 { /*  כותרת המלל בדף האודות  */
+  color: #704c30;
+  font-family: 'Assistant', sans-serif;
+} 
+h1 { /*  כותרת המלל בדף האודות  */
+  color: #825b3e;
+  font-family: 'Assistant', sans-serif;
+} 
+
+
+.aboutContainer {
+  /* position: relative; */
+  height: 90vh;
+  /* display: flex;*/
+  align-items: center;
+  justify-content: center; 
+  background-image: url('/public/images/newCollection.jpg');
+  background-size: cover;
+
+  /* background-position: center; */
+  color: white;
+  
+}
+
+
+.aboutOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  
+
+}
+
+.aboutContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  opacity: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+
+}
+
+/* עיצוב עמוד ביבי */
+.pageDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.productCard {
+  flex: 1 1 22%;
+  max-width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  text-align: center;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.productCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.productCard p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.productCard button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #d0bbab;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.productCard button:hover {
+  background-color: #704c30;
+}
+#alert {
+  background-color: #e6ffe6;
+  padding: 10px;
+  border: 1px solid green;
+  border-radius: 5px;
+  margin: 10px;
+  color: darkgreen;
+  font-weight: bold;
+}
+.img{
+  /* width:40%; */
+  height: 60vh;;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+/* עיצוב הדף פרטים נוספים */
+.singlePage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  direction: rtl; /* אם אתה רוצה שהטקסט יתחיל מימין */
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.singleData {
+  flex: 1;
+  text-align: left; /* כאן יופיע הטקסט בצד שמאל */
+}
+
+.singleData p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color:  #85654c;
+}
+
+#singleButton {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #7c5c43;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#singleButton:hover {
+  background-color:  #c6a389;
+  color: #ffffff;
+}
+
+.singleImg {
+  flex: 1;
+  text-align: right;
+}
+
+.singleImg img {
+  max-width: 100%;
+  height: 70vh;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .singlePage {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .singleData {
+    text-align: center;
+  }
+
+  .singleImg {
+    text-align: center;
+  }
+}
+
+/* עיצוב לדף יצירת קשר */
+.contactPage {
+  background-color: #f5eee6; /* בז' רך */
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 50px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contactBtn {
+  padding: 12px 16px;
+  border: 1px solid #d2b48c; /* חום בהיר */
+  border-radius: 8px;
+  background-color: rgba(255, 250, 245, 0.2); /* רקע שקוף 80% */
+  font-size: 16px;
+  color: #5c4033; /* חום שוקולד */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.contactBtn:focus {
+  outline: none;
+  border-color: #a67c52;
+  background-color: rgba(255, 250, 245, 0.8); /* רקע שקוף 80% */
+
+}
+
+button {
+  padding: 12px 16px;
+  background-color: #a67c52; /* חום שוקולד רך */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #8b5e3c; /* חום כהה יותר */
+}
+
+/* הדיב של ההודעה כשהעגלה ריקה */
+/* .empty-cart {
+  border: 1px solid red;
+} */
+
+
+
+
+/* עיצוב דף הבית============================================ */
+
+/* כללי ואיפוס */
+:root {
+  --primary-gold: #B8860B; /* זהב עתיק */
+  --secondary-brown: #654321; /* חום עשיר */
+  --light-beige: #F5F5DC; /* בז' בהיר */
+  --cream: #FFFDD0; /* קרם */
+  --off-white: #F8F8F8; /* לבן-שמנת */
+  --text-dark: #333;
+  --text-light: #555;
+  --font-serif: 'Playfair Display', serif; /* או גופן סריפי יוקרתי אחר */
+  --font-sans-serif: 'Lato', sans-serif; /* או גופן סנס-סריפי קריא אחר */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans-serif);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--off-white);
+  direction: rtl; /* לאתר בעברית */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 3em;
+  color: var(--primary-gold);
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary-brown);
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-sans-serif);
+  font-size: 1.1em;
+}
+
+.primary-btn {
+  background-color: var(--primary-gold);
+  color: var(--off-white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.primary-btn:hover {
+  background-color: darken(var(--primary-gold), 10%); /* דורש Sass או פונקציה */
+  transform: translateY(-3px);
+}
+
+.secondary-btn {
+  background-color: var(--secondary-brown);
+  color: var(--off-white);
+  margin-top: 40px;
+}
+
+.secondary-btn:hover {
+  background-color: darken(var(--secondary-brown), 10%); /* דורש Sass או פונקציה */
+  transform: translateY(-3px);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 90vh; /* גובה מסך כמעט מלא */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; /* טקסט לבן על רקע כהה יותר של התמונה */
+  overflow: hidden; /* למקרה שיש אנימציות */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* צל עדין */
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* שכבת הצללה עדינה על התמונה */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1); /* רקע מעט שקוף לכיתוב */
+  border-radius: 10px;
+  backdrop-filter: blur(2px); /* טשטוש רקע עדין */
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 4.5em;
+  margin-bottom: 20px;
+  color: var(--cream);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: fadeInDown 1s ease-out; /* אנימציה לדוגמה */
+}
+
+.hero-subtitle {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  color: var(--light-beige);
+  animation: fadeInUp 1.2s ease-out; /* אנימציה לדוגמה */
+}
+
+.crown-icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  background-color: var(--cream);
+  text-align: center;
+}
+
+.philosophy-text {
+  font-size: 1.2em;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-dark);
+}
+
+/* Featured Collections Section */
+.featured-collections {
+  background-color: var(--off-white);
+  text-align: center;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.collection-item {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collection-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.collection-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.collection-item:hover .collection-image {
+  transform: scale(1.05);
+}
+
+.collection-title {
+  font-family: var(--font-serif);
+  font-size: 1.8em;
+  color: var(--secondary-brown);
+  margin: 25px 0 10px;
+  padding: 0 20px;
+}
+
+.collection-description {
+  font-size: 1em;
+  color: var(--text-light);
+  padding: 0 20px 30px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: var(--light-beige);
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.testimonial-item {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-item::before {
+  content: '“'; /* סמל גרשיים גדול */
+  font-family: var(--font-serif);
+  font-size: 5em;
+  color: var(--primary-gold);
+  position: absolute;
+  top: 10px;
+  left: 20px; /* לשנות ל right אם האתר הוא RTL */
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1.1em;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: var(--secondary-brown);
+}
+
+/* Gift Section */
+.gift-section {
+  background-color: var(--cream);
+}
+
+.gift-content-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* יאפשר גלישה בשורה במובייל */
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.gift-text-content {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.gift-image-wrapper {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.gift-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gift-description {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: var(--text-dark);
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: var(--off-white);
+  text-align: center;
+}
+
+.contact-intro {
+  font-size: 1.1em;
+  margin-bottom: 40px;
+  color: var(--text-light);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: var(--font-sans-serif);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: right; /* יישור לימין בשדות קלט */
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 3px rgba(var(--primary-gold), 0.2);
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .submit-btn {
+  align-self: center;
+  width: 50%;
+  margin-top: 20px;
+}
+
+/* Footer */
+.main-footer {
+  background-color: var(--secondary-brown);
+  color: var(--light-beige);
+  padding: 50px 0 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-logo h3 {
+  font-family: var(--font-serif);
+  font-size: 2.5em;
+  color: var(--primary-gold);
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 0.9em;
+  color: var(--light-beige);
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  margin-bottom: 10px;
+}
+
+.footer-nav ul li a {
+  color: var(--light-beige);
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+  color: var(--primary-gold);
+}
+
+.social-media a {
+  color: var(--light-beige);
+  font-size: 1.8em;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: var(--primary-gold);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* אנימציות */
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* רספונסיביות בסיסית */
+@media (max-width: 992px) {
+  .hero-title {
+      font-size: 3.5em;
+  }
+  .hero-subtitle {
+      font-size: 1.2em;
+  }
+  .section-title {
+      font-size: 2.5em;
+  }
+  .collections-grid, .testimonials-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .gift-content-wrapper {
+      flex-direction: column;
+  }
+  .gift-text-content, .gift-image-wrapper {
+      text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+      height: 70vh;
+  }
+  .hero-title {
+      font-size: 2.8em;
+  }
+  .hero-subtitle {
+      font-size: 1em;
+  }
+  .section-padding {
+      padding: 50px 0;
+  }
+  .section-title {
+      font-size: 2em;
+      margin-bottom: 40px;
+  }
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+  }
+  .footer-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+  }
+  .footer-nav ul li {
+      margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+      font-size: 2.2em;
+  }
+  .hero-subtitle {
+      font-size: 0.9em;
+  }
+  .btn {
+      padding: 12px 20px;
+      font-size: 1em;
+  }
+  .contact-form .submit-btn {
+      width: 80%;
+  }
+}
+
+
+
+
+
+/* components/MessageBox.css */
+
+/* סגנון לשכבת הרקע הכהה שחוסמת אינטראקציה עם שאר הדף */
+.message-box-overlay {
+  position: fixed; /* ממקם את האלמנט ביחס לחלון התצוגה */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* גורם לאלמנט לכסות את כל המסך */
+  background-color: rgba(107, 114, 128, 0.5); /* רקע אפור שקוף למחצה (מקביל ל-bg-gray-600 bg-opacity-50) */
+  display: flex; /* משתמש ב-flexbox למרכוז התוכן */
+  align-items: center; /* ממקם את התוכן במרכז אנכית */
+  justify-content: center; /* ממקם את התוכן במרכז אופקית */
+  z-index: 50; /* מגדיר את ה-z-index לערך גבוה, כדי שהאלמנט יופיע מעל אלמנטים אחרים בדף */
+}
+
+/* סגנון לתיבת ההודעה עצמה */
+.message-box-content {
+  background-color: white; /* רקע לבן */
+  padding: 1.5rem; /* מרווח פנימי מכל הכיוונים (מקביל ל-p-6) */
+  border-radius: 0.5rem; /* פינות מעוגלות (מקביל ל-rounded-lg) */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* צל גדול סביב התיבה (מקביל ל-shadow-lg) */
+  text-align: center; /* יישור טקסט למרכז */
+  max-width: 24rem; /* רוחב מקסימלי קטן (מקביל ל-max-w-sm) */
+  width: 100%; /* רוחב מלא בתוך הגבולות של max-w-sm (רספונסיביות) */
+}
+
+/* סגנון לכפתור האישור */
+.message-box-button {
+  background-color: #3b82f6; /* כחול (מקביל ל-bg-blue-500) */
+  color: white; /* טקסט לבן */
+  font-weight: bold; /* טקסט מודגש */
+  padding: 0.5rem 1rem; /* מרווח פנימי לכפתור (מקביל ל-py-2 px-4) */
+  border-radius: 9999px; /* פינות מעוגלות מאוד (מקביל ל-rounded-full) */
+  transition: background-color 0.3s ease; /* אנימציית מעבר חלקה לצבע רקע */
+  border: none; /* הסרת גבול ברירת מחדל */
+  cursor: pointer; /* שינוי סמן העכבר ליד */
+}
+
+/* סגנון למצב ריחוף (hover) של הכפתור */
+.message-box-button:hover {
+  background-color: #2563eb; /* כחול כהה יותר במעבר עכבר (מקביל ל-hover:bg-blue-600) */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+  סגנונות אלו מעצבים באופן בלעדי את רכיב הלוגין/הרשמה בסגנון טופס יצירת הקשר
+  שבצילום המסך שסופק (גוונים חומים רכים, פינות מעוגלות),
+  ומתמקד באלמנטים בתוך ה-div הפנימי "logIn", וב-div החיצוני "loginPage".
+
+  **חשוב**: אין כאן סגנונות המשפיעים על ה-body, html, או על מיקום הקונטיינר הראשי
+  של דף ההתחברות עצמו, ואין נגיעה בסרגל ניווט או ברכיבים חיצוניים אחרים.
+  סגנונות למרכוז הטופס בדף ולרקע הכללי של הדף צריכים להיות מוגדרים במקום אחר.
+*/
+
+/* סגנונות ל-div העוטף החיצוני: .loginPage */
+.loginPage {
+  background-color: #FBF7F2; /* רקע בז' בהיר מאוד לקונטיינר העוטף, כמו בצילום מסך */
+  padding: 35px; /* פאדינג מרווח יותר מסביב לטופס הפנימי */
+  border-radius: 20px; /* פינות עגולות מאוד לקונטיינר, כמו בצילום מסך */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07); /* צל עדין ורחב יותר, כמו בצילום מסך */
+  width: 100%;
+  max-width: 480px; /* רוחב מקסימלי נוח לטופס */
+  box-sizing: border-box; /* כלול פאדינג ובורדר ברוחב */
+  animation: fadeIn 0.8s ease-out; /* אנימציית כניסה חלקה */
+  /*
+    הערה: סגנונות כמו display: flex, justify-content, align-items,
+    min-height עבור מיקום במרכז הדף אינם כלולים כאן.
+    יש להגדיר אותם בקובץ CSS גלובלי (למשל App.css) אם הם נדרשים.
+  */
+}
+
+/* אנימציית כניסה */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* סגנונות ל-div הפנימי: .logIn (מכיל את שדות הקלט והכפתורים) */
+.loginPage .logIn {
+  display: flex;
+  flex-direction: column; /* סידור אלמנטים בעמודה */
+  gap: 18px; /* רווח בין האלמנטים (input/button) */
+  width: 100%; /* תופס את כל רוחב ההורה (.loginPage) */
+  /* אין כאן רקע, צל או בורדר-רדיוס משלו ל-logIn, אלא רק פריסה */
+}
+
+/* סגנונות לשדות קלט (input) */
+.loginPage .logIn input {
+  padding: 12px 18px; /* פאדינג לשדה הקלט, כמו בצילום מסך */
+  border: 1px solid #D7CEBF; /* גבול חום בהיר ורך, כמו בצילום מסך */
+  border-radius: 10px; /* פינות מעוגלות יותר לשדה הקלט, כמו בצילום מסך */
+  font-size: 1.05rem;
+  color: #5E5D5B; /* צבע טקסט חום-אפרפר כהה */
+  background-color: #FFFFFF; /* רקע לבן לשדה הקלט */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  direction: rtl; /* יישור מימין לשמאל עבור עברית */
+  text-align: right; /* יישור טקסט מימין */
+  box-sizing: border-box; /* ודא שפאדינג נכלל ברוחב */
+  width: 100%; /* תופס את כל רוחב ההורה (.logIn) */
+}
+
+.loginPage .logIn input::placeholder {
+  color: #A7A39B; /* צבע פלייס-הולדר חום-אפרפר בהיר */
+  direction: rtl;
+  text-align: right;
+}
+
+.loginPage .logIn input:focus {
+  border-color: #BFA384; /* צבע גבול חום מעט כהה יותר במיקוד */
+  outline: none; /* הסר קו מתאר ברירת מחדל */
+  box-shadow: 0 0 0 3px rgba(191, 163, 132, 0.2); /* צל זוהר עדין במיקוד */
+}
+
+/* סגנונות כלליים לכפתורים */
+.loginPage .logIn button {
+  padding: 14px 25px; /* פאדינג מרווח לכפתורים */
+  border: none;
+  border-radius: 10px; /* פינות מעוגלות לכפתורים, כמו בצילום מסך */
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #FFFFFF; /* צבע טקסט לבן */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  width: 100%; /* תופס את כל רוחב ההורה (.logIn) */
+}
+
+/* סגנון כפתור "התחבר" (כפתור ראשון) */
+.loginPage .logIn button:nth-of-type(1) {
+  background-color: #A0785A; /* חום בינוני, צבע כפתור ראשי, כמו בצילום מסך */
+}
+
+.loginPage .logIn button:nth-of-type(1):hover {
+  background-color: #8C6248; /* חום כהה יותר בריחוף */
+  transform: translateY(-2px); /* הרמה קלה בריחוף */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* צל עדין בריחוף */
+}
+
+/* סגנון כפתור "הרשם" (כפתור שני) */
+.loginPage .logIn button:nth-of-type(2) {
+  background-color: #C9A78E; /* חום בהיר ורך יותר להרשמה, כמו בצילום מסך */
+}
+
+.loginPage .logIn button:nth-of-type(2):hover {
+  background-color: #BFA384; /* חום בהיר כהה יותר בריחוף */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* סגנון כפתור "יציאת משתמש" (כפתור שלישי) */
+.loginPage .logIn button:nth-of-type(3) {
+  background-color: #E0E0E0; /* אפור בהיר ליציאה */
+  color: #5E5D5B; /* צבע טקסט חום-אפרפר כהה */
+  border: 1px solid #D7CEBF; /* מסגרת חומה רכה */
+}
+
+.loginPage .logIn button:nth-of-type(3):hover {
+  background-color: #D0D0D0; /* אפור מעט כהה יותר בריחוף */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* מצב לחיצה כללי לכל הכפתורים */
+.loginPage .logIn button:active {
+  transform: translateY(0); /* חזרה למקום בלחיצה */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* צל קטן יותר בלחיצה */
+}
+
+/* רספונסיביות בסיסית */
+@media (max-width: 600px) {
+  .loginPage {
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 90%; /* יתפוס יותר רוחב במובייל */
+  }
+  .loginPage .logIn {
+      gap: 15px; /* רווחים קטנים יותר במובייל */
+  }
+  .loginPage .logIn input,
+  .loginPage .logIn button {
+      padding: 10px 15px;
+      font-size: 1rem;
+  }
+}
